@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDPL</title>
+    <!-- Link css -->
+    <link rel="stylesheet" href="css/style.css">
+    <h!-- Link icon -->
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="js/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <script src="https://uhchat.net/code.php?f=2a48b4"></script>
+    <header>
+        <div class="menu-logo">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="" style="width: 150px; height: auto;">
+            </div>
+            <div class="main-menu">
+                <ul>
+                    <li><a href="#">TRANG CHỦ</a></li>
+                    <li>
+                        <a href="#">SẢN PHẨM</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Áo thun | Tshist</a></li>
+                            <li><a href="#">Áo khoác| Jacket</a></li>
+                            <li><a href="#">Áo trùm đầu | Hoodie</a></li>
+                            <li><a href="#">Áo tay dài | Sweater</a></li>
+                            <li><a href="#">Đang cập nhật</a></li>
+                            <li><a href="#">Đang cập nhật</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">HỆ THỐNG CỬA HÀNG</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Phước An-KrôngPắc-Đăk Lăk</a></li>
+                            <li><a href="#">Q.12-tp Hồ Chí Minh</a></li>
+                            <li><a href="#">Q.3-tp Hồ Chí Minh</a></li>
+                            <li><a href="#">30/6 Hà Thị Khiêm-tp Buôn ma Thuột</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">SỰ KIỆN MỚI NHẤT</a></li>
+                    <li class="ti"><a href="#">GIỚI THIỆU</a></li>
+                </ul>
+            </div>
+            <div class="dongho">
+                <span id="dongho" onclick="startstopDH()">Đồng hồ</span>
+            </div>
+            <div class="tienich">
+                <a href="#"><i class='bx bx-search-alt-2'></i></a>
+                <a href="#"><i onclick="HienGioHang()" class='bx bxs-shopping-bag'></i></a>
+                <a href="#"><i class='bx bxs-user-account'></i></a>
+            </div>
+        </div>
+    </header>
+    <div>
+
+        <div class="banner">
+            <img id="img" src="img/sile1.png" alt="">
+        </div>
+        <script>
+            var slide = [
+                'img/sile2.png',
+                'img/sile3.png',
+                'img/sile4.png',
+                'img/sile1.png',
+            ];
+            var myindex = 0;
+            setInterval(change, 2000)
+            var element = document.querySelector('#img')
+            function change() {
+                switch (myindex) {
+                    case 0:
+                        element.src = slide[0];
+                        break;
+                    case 1:
+                        element.src = slide[1];
+                        break;
+                    case 2:
+                        element.src = slide[2];
+                        break;
+                    case 3:
+                        element.src = slide[3];
+                        break;
+                }
+                myindex++;
+                if (myindex > slide.length) {
+                    myindex = 0;
+                }
+            }
+        </script>
+    </div>
+    <div class="boxcenter">
+        <div class="product">
+            <h3 class="heading">Sản phẩm bán chạy <i class='bx bxs-t-shirt' ></i></h3>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/1.jpg" alt="">
+                    <p class="name">Áo tay dài nam nữ trắng</p>
+                    <div class="gia"><b>300.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/1.jpg','Áo tay dài nam nữ trắng',300000,'A')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/2.jpg" alt="">
+                    <p class="name">Áo tay dài nam nữ đen</p>
+                    <div class="gia"><b>350.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/2.jpg','Áo tay dài nam nữ đen',330000,'B')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/3.jpg" alt="">
+                    <p class="name">Áo tay dài nam nữ đen</p>
+                    <div class="gia"><b>320.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/3.jpg','Áo tay dài nam nữ đen',320000,'C')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/4.jpg" alt="">
+                    <p class="name">Áo thun đen cáo ranh ma</p>
+                    <div class="gia"><b>120.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/4.jpg','Áo thun đen cáo ranh ma',120000,'D')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/5.jpg" alt="">
+                    <p class="name">Áo thun nam nữ đen</p>
+                    <div class="gia"><b>250.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/5.jpg','Áo thun nam nữ đen',250000,'E')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/6.jpg" alt="">
+                    <p class="name">Hoodie nam nữ đen</p>
+                    <div class="gia"><b>250.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/6.jpg','Hoodie nam nữ đen',250000,'F')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/AK_1.jpg" alt="">
+                    <p class="name">Hoodie nam nữ trắng</p>
+                    <div class="gia"><b>250.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/6.jpg','Hoodie nam nữ trắng',250000,'G')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                    
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/AK_2.jpg" alt="">
+                    <p class="name">Áo thun nam nữ trắng</p>
+                    <div class="gia"><b>200.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/AK_2.jpg','Áo thun nam nữ trắng',200000,'H')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="product">
+            <h3 class="heading">Sản phẩm mới nhất <i class='bx bxs-t-shirt' ></i></h3>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/AK_3.jpg" alt="">
+                    <p class="name">Áo thun nam nữ trắng</p>
+                    <div class="gia"><b>200.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/AK_3.jpg','Áo thun nam nữ trắng',200000,'J')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/1.jpg" alt="">
+                    <p class="name">Áo thun nam nữ đen</p>
+                    <div class="gia"><b>200.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/1.jpg','Áo thun nam nữ đen',200000,'K')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/2.jpg" alt="">
+                    <p class="name">Áo thun nam nữ xanh</p>
+                    <div class="gia"><b>120.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/2.jpg','Áo thun nam nữ xanh',120000,'L')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/3.jpg" alt="">
+                    <p class="name">Áo thun nam nữ fake love</p>
+                    <div class="gia"><b>200.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/3.jpg','Áo thun nam nữ fake love',200000,'M')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/4.jpg" alt="">
+                    <p class="name">Áo dài tay nam nữ</p>
+                    <div class="gia"><b>320.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/4.jpg','Áo dài tay nam nữ',320000,'N')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/5.jpg" alt="">
+                    <p class="name">Áo thun nam nữ</p>
+                    <div class="gia"><b>200.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/5.jpg','Áo thun nam nữ',200000,'O')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/6.jpg" alt="">
+                    <p class="name">Hoodie nam nữ đen</p>
+                    <div class="gia"><b>210.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/6.jpg','Hoodie nam nữ đen',210000,'P')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="product-item">
+                    <img id="hinh" src="img/AK_1.jpg" alt="">
+                    <p class="name">Áo thun đen cáo ranh ma</p>
+                    <div class="gia"><b>120.000đ</b></div>
+                    <div class="themHang"> <button class="nutMua"
+                        onclick="themMatHang('img/AK_1.jpg','Áo thun đen cáo ranh ma',120000,'P')"><img
+                            src="img/gioHang.png" style="width: 25px;"></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <footer>
+        <div class="about footer-item">
+            <img src="img/footer.jpg" alt="">
+        </div>
+        <div class="link footer-item">
+            <h3>Liên kết</h3>
+            <a href="#">Trang chủ</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Hệ thống cửa hàng</a>
+            <a href="#">Giới thiệu</a>
+        </div>
+        <div class="content footer-item">
+            <h3>Thông tin liên hệ</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Intagram</a>
+            <a href="#">Google</a>
+            <a href="#">Vs code</a>
+        </div>
+        
+        <a href="html/formdk.html"><button class="formdk">Đăng kí nhận thông tin sản phẩm</button></a>
+    </footer>
+    <div id="container2">
+        <h2> Giỏ hàng của bạn </h2>
+        <div class="gioHangMua" id="gioMuaHang">
+        </div>
+        <h3 id="tongTien">Tổng tiền : 0 ₫</h3>
+    </div>
+</body>
+
+</html>
